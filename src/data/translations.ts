@@ -65,7 +65,36 @@ export const translations = {
       subtitle: "Watch real transformation stories from our patients on TikTok.",
       loading: "Loading Story...",
       view_more: "View More on TikTok"
-    }
+    },
+    heroTag: "The Gold Standard in Dentistry",
+    compare: {
+      before: "BEFORE",
+      after: "AFTER",
+      original: "Original Condition",
+      slide: "Slide to Compare",
+      final: "Final Result"
+    },
+    footer: {
+      brand_desc: "Defining the future of dental aesthetics. European quality, cutting-edge technology, and results that speak for themselves.",
+      quick_links: "Quick Links",
+      treatments: "Treatments",
+      implants: "Dental Implants",
+      crowns: "Zirconia Crowns",
+      hollywood: "Hollywood Smile",
+      hair: "Hair Transplant",
+      veneers: "E-max Veneers",
+      whitening: "Teeth Whitening",
+      contact_title: "Contact",
+      location: "Antalya, Turkey",
+      newsletter: "Stay Updated",
+      newsletter_desc: "Subscribe for VIP offers.",
+      email_placeholder: "Your email",
+      ok: "OK",
+      copyright: "© 2025 ML Clinic. All rights reserved.",
+      privacy: "Privacy Policy",
+      terms: "Terms of Service"
+    },
+    step: "Step"
   },
   cs: {
     nav: {
@@ -131,7 +160,36 @@ export const translations = {
       subtitle: "Sledujte skutečné příběhy proměn našich pacientů na TikToku.",
       loading: "Načítání příběhu...",
       view_more: "Zobrazit více na TikToku"
-    }
+    },
+    heroTag: "Zlatý standard ve stomatologii",
+    compare: {
+      before: "PŘED",
+      after: "PO",
+      original: "Původní stav",
+      slide: "Přesuňte pro srovnání",
+      final: "Konečný výsledek"
+    },
+    footer: {
+      brand_desc: "Definujeme budoucnost dentální estetiky. Evropská kvalita, špičková technologie a výsledky, které mluví samy za sebe.",
+      quick_links: "Rychlé odkazy",
+      treatments: "Ošetření",
+      implants: "Zubní implantáty",
+      crowns: "Zirkonové korunky",
+      hollywood: "Hollywoodský úsměv",
+      hair: "Transplantace vlasů",
+      veneers: "E-max fazety",
+      whitening: "Bělení zubů",
+      contact_title: "Kontakt",
+      location: "Antalya, Turecko",
+      newsletter: "Buďte informováni",
+      newsletter_desc: "Přihlaste se k odběru VIP nabídek.",
+      email_placeholder: "Váš email",
+      ok: "OK",
+      copyright: "© 2025 ML Clinic. Všechna práva vyhrazena.",
+      privacy: "Zásady ochrany osobních údajů",
+      terms: "Podmínky služby"
+    },
+    step: "Krok"
   },
   pl: {
     nav: {
@@ -197,6 +255,35 @@ export const translations = {
       subtitle: "Oglądaj prawdziwe historie metamorfoz naszych pacjentów na TikTok.",
       loading: "Ładowanie historii...",
       view_more: "Zobacz więcej na TikTok"
-    }
+    },
+    heroTag: "Złoty standard w stomatologii",
+    compare: {
+      before: "PRZED",
+      after: "PO",
+      original: "Stan początkowy",
+      slide: "Przesuń aby porównać",
+      final: "Efekt końcowy"
+    },
+    footer: {
+      brand_desc: "Definiujemy przyszłość estetyki stomatologicznej. Europejska jakość, najnowocześniejsza technologia i wyniki mówiące same za siebie.",
+      quick_links: "Szybkie linki",
+      treatments: "Usługi",
+      implants: "Implanty zębowe",
+      crowns: "Korony cyrkonowe",
+      hollywood: "Uśmiech Hollywood",
+      hair: "Przeszczep włosów",
+      veneers: "Licówki E-max",
+      whitening: "Wybielanie zębów",
+      contact_title: "Kontakt",
+      location: "Antalya, Turcja",
+      newsletter: "Pozostaw w kontakcie",
+      newsletter_desc: "Zapisz się na oferty VIP.",
+      email_placeholder: "Twój email",
+      ok: "OK",
+      copyright: "© 2025 ML Clinic. Wszelkie prawa zastrzeżone.",
+      privacy: "Polityka prywatności",
+      terms: "Warunki usługi"
+    },
+    step: "Krok"
   }
 };

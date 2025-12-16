@@ -1,6 +1,7 @@
 "use client";
 import { useState, useRef, useEffect } from 'react';
 import Image from 'next/image';
+import { useLanguage } from '../context/LanguageContext';
 
 const cases = [
   {
@@ -20,6 +21,7 @@ const cases = [
 ];
 
 export default function CompareSlider() {
+  const { t } = useLanguage();
   const [activeCase, setActiveCase] = useState(0);
   const [sliderPosition, setSliderPosition] = useState(50);
   const [isDragging, setIsDragging] = useState(false);
@@ -84,7 +86,7 @@ export default function CompareSlider() {
                className="object-cover"
                priority
              />
-             <span className="absolute top-4 right-4 bg-black/50 text-white px-4 py-1.5 rounded-full text-xs font-bold tracking-widest backdrop-blur-sm z-10 border border-white/20 shadow-lg">AFTER</span>
+             <span className="absolute top-4 right-4 bg-black/50 text-white px-4 py-1.5 rounded-full text-xs font-bold tracking-widest backdrop-blur-sm z-10 border border-white/20 shadow-lg">{t.compare.after}</span>
           </div>
 
           {/* BEFORE Image (Top Layer - Clipped) */}
@@ -99,7 +101,7 @@ export default function CompareSlider() {
                 className="object-cover" 
                 priority
               />
-              <span className="absolute top-4 left-4 bg-black/50 text-white px-4 py-1.5 rounded-full text-xs font-bold tracking-widest backdrop-blur-sm z-10 border border-white/20 shadow-lg">BEFORE</span>
+              <span className="absolute top-4 left-4 bg-black/50 text-white px-4 py-1.5 rounded-full text-xs font-bold tracking-widest backdrop-blur-sm z-10 border border-white/20 shadow-lg">{t.compare.before}</span>
           </div>
 
           {/* Slider Handle */}
@@ -116,9 +118,9 @@ export default function CompareSlider() {
         </div>
         
         <div className="flex justify-between mt-4 text-[10px] font-bold tracking-widest text-slate-400 uppercase px-4">
-          <span>Original Condition</span>
-          <span>Slide to Compare</span>
-          <span>Final Result</span>
+          <span>{t.compare.original}</span>
+          <span>{t.compare.slide}</span>
+          <span>{t.compare.final}</span>
         </div>
       </div>
 

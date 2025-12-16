@@ -65,7 +65,7 @@ export default function HeroSlider() {
           <div className="inline-flex items-center gap-3 py-2 px-4 border border-white/20 bg-white/5 backdrop-blur-md mb-8">
             <span className="w-2 h-2 rounded-full bg-yellow-500 animate-pulse"></span>
             <span className="text-white text-xs font-bold tracking-[0.2em] uppercase">
-              The Gold Standard in Dentistry
+              {t.heroTag}
             </span>
           </div>
 

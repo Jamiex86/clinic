@@ -49,7 +49,7 @@ export default function CustomerJourney() {
                 {step.icon}
               </div>
               <h3 className="text-xl font-bold mb-3">
-                <span className="text-blue-500 block text-sm mb-1">Step {step.id}</span>
+                <span className="text-blue-500 block text-sm mb-1">{t.step} {step.id}</span>
                 {step.title}
               </h3>
               <p className="text-slate-400 text-sm leading-relaxed px-4">

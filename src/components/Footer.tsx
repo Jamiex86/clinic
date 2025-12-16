@@ -1,11 +1,13 @@
 "use client";
 import Link from "next/link";
+import { useLanguage } from "../context/LanguageContext";
 
 export default function Footer() {
+  const { t } = useLanguage();
   return (
     <footer className="bg-slate-950 text-white pt-24 pb-12 border-t border-slate-900">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8 lg:gap-12 mb-16">
           
           {/* Brand Column */}
           <div className="col-span-1 md:col-span-1">
@@ -18,7 +20,7 @@ export default function Footer() {
               </span>
             </div>
             <p className="text-slate-400 text-sm leading-relaxed mb-6">
-              Defining the future of dental aesthetics. European quality, cutting-edge technology, and results that speak for themselves.
+              {t.footer.brand_desc}
             </p>
             <div className="flex gap-4">
               {/* Instagram */}
@@ -56,24 +58,38 @@ export default function Footer() {
             </div>
           </div>
 
+          {/* Quick Links Column */}
+          <div>
+            <h4 className="text-white font-serif font-bold tracking-wider mb-6">{t.footer.quick_links}</h4>
+            <ul className="space-y-3 text-sm text-slate-400">
+              <li><Link href="/" className="hover:text-yellow-500 transition">{t.nav.home}</Link></li>
+              <li><Link href="/about" className="hover:text-yellow-500 transition">{t.nav.about}</Link></li>
+              <li><Link href="/treatments" className="hover:text-yellow-500 transition">{t.nav.services}</Link></li>
+              <li><Link href="/gallery" className="hover:text-yellow-500 transition">{t.nav.gallery}</Link></li>
+              <li><Link href="/contact" className="hover:text-yellow-500 transition">{t.nav.contact}</Link></li>
+            </ul>
+          </div>
+
           {/* Treatments Column */}
           <div>
-            <h4 className="text-white font-serif font-bold tracking-wider mb-6">Treatments</h4>
+            <h4 className="text-white font-serif font-bold tracking-wider mb-6">{t.footer.treatments}</h4>
             <ul className="space-y-3 text-sm text-slate-400">
-              <li><Link href="/treatments" className="hover:text-yellow-500 transition">Dental Implants</Link></li>
-              <li><Link href="/treatments" className="hover:text-yellow-500 transition">Zirconia Crowns</Link></li>
-              <li><Link href="/treatments" className="hover:text-yellow-500 transition">Hollywood Smile</Link></li>
-              <li><Link href="/treatments" className="hover:text-yellow-500 transition">Hair Transplant</Link></li>
+              <li><Link href="/treatments" className="hover:text-yellow-500 transition">{t.footer.implants}</Link></li>
+              <li><Link href="/treatments" className="hover:text-yellow-500 transition">{t.footer.veneers}</Link></li>
+              <li><Link href="/treatments" className="hover:text-yellow-500 transition">{t.footer.crowns}</Link></li>
+              <li><Link href="/treatments" className="hover:text-yellow-500 transition">{t.footer.hollywood}</Link></li>
+              <li><Link href="/treatments" className="hover:text-yellow-500 transition">{t.footer.whitening}</Link></li>
+              <li><Link href="/treatments" className="hover:text-yellow-500 transition">{t.footer.hair}</Link></li>
             </ul>
           </div>
 
           {/* Contact Info Column */}
           <div>
-            <h4 className="text-white font-serif font-bold tracking-wider mb-6">Contact</h4>
+            <h4 className="text-white font-serif font-bold tracking-wider mb-6">{t.footer.contact_title}</h4>
             <ul className="space-y-4 text-sm text-slate-400">
               <li className="flex items-start gap-3">
                 <span className="text-yellow-500">📍</span>
-                <span>Antalya, Turkey</span>
+                <span>{t.footer.location}</span>
               </li>
               <li className="flex items-center gap-3">
                 <span className="text-yellow-500">📞</span>
@@ -88,16 +104,16 @@ export default function Footer() {
 
           {/* Newsletter Column */}
           <div>
-            <h4 className="text-white font-serif font-bold tracking-wider mb-6">Stay Updated</h4>
-            <p className="text-slate-400 text-sm mb-4">Subscribe for VIP offers.</p>
+            <h4 className="text-white font-serif font-bold tracking-wider mb-6">{t.footer.newsletter}</h4>
+            <p className="text-slate-400 text-sm mb-4">{t.footer.newsletter_desc}</p>
             <div className="flex">
               <input 
                 type="email" 
-                placeholder="Your email" 
+                placeholder={t.footer.email_placeholder}
                 className="bg-slate-900 border border-slate-800 text-white px-4 py-3 w-full focus:outline-none focus:border-yellow-500 placeholder-slate-600 text-sm" 
               />
               <button className="bg-gradient-to-r from-yellow-600 to-yellow-500 px-6 py-2 hover:brightness-110 transition text-slate-900 font-bold text-sm">
-                OK
+                {t.footer.ok}
               </button>
             </div>
           </div>
@@ -105,10 +121,10 @@ export default function Footer() {
         
         {/* Copyright Section */}
         <div className="border-t border-slate-900 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-slate-600 text-sm">
-          <p>© 2025 ML Clinic. All rights reserved.</p>
+          <p>{t.footer.copyright}</p>
           <div className="flex gap-6">
-            <a href="#" className="hover:text-yellow-500 transition">Privacy Policy</a>
-            <a href="#" className="hover:text-yellow-500 transition">Terms of Service</a>
+            <a href="#" className="hover:text-yellow-500 transition">{t.footer.privacy}</a>
+            <a href="#" className="hover:text-yellow-500 transition">{t.footer.terms}</a>
           </div>
         </div>
       </div>

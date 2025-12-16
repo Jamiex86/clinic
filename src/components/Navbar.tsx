@@ -7,6 +7,7 @@ import { useState, useEffect } from "react";
 export default function Navbar() {
   const { t } = useLanguage();
   const [scrolled, setScrolled] = useState(false);
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 40);
@@ -85,17 +86,67 @@ export default function Navbar() {
             </nav>
 
             {/* RIGHT ACTION */}
-            <div className="flex items-center">
+            <div className="flex items-center gap-4">
               <Link 
                 href="/contact" 
-                className="bg-gradient-to-r from-yellow-600 via-yellow-500 to-yellow-600 text-white px-8 py-3 rounded-none text-xs font-bold uppercase tracking-widest transition-all duration-300 transform hover:-translate-y-1 hover:shadow-[0_0_20px_rgba(234,179,8,0.4)]"
+                className="hidden md:block bg-gradient-to-r from-yellow-600 via-yellow-500 to-yellow-600 text-white px-6 md:px-8 py-2 md:py-3 rounded-none text-xs font-bold uppercase tracking-widest transition-all duration-300 transform hover:-translate-y-1 hover:shadow-[0_0_20px_rgba(234,179,8,0.4)]"
               >
                 {t.nav.quote}
               </Link>
+              
+              {/* Mobile Menu Button */}
+              <button
+                onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+                className="lg:hidden text-white p-2 hover:text-yellow-500 transition-colors"
+                aria-label="Toggle menu"
+              >
+                {mobileMenuOpen ? (
+                  <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                  </svg>
+                ) : (
+                  <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+                  </svg>
+                )}
+              </button>
             </div>
 
           </div>
         </div>
+      </div>
+
+      {/* MOBILE MENU DRAWER */}
+      <div 
+        className={`lg:hidden bg-slate-950 border-t border-slate-800 transition-all duration-300 overflow-hidden ${
+          mobileMenuOpen ? 'max-h-[70vh] opacity-100' : 'max-h-0 opacity-0'
+        }`}
+      >
+        <nav className="max-w-7xl mx-auto px-4 py-4 flex flex-col space-y-1">
+          {[
+            { href: '/', label: t.nav.home },
+            { href: '/treatments', label: t.nav.services },
+            { href: '/gallery', label: t.nav.gallery },
+            { href: '/about', label: t.nav.about },
+            { href: '/contact', label: t.nav.contact }
+          ].map((link) => (
+            <Link 
+              key={link.href}
+              href={link.href}
+              onClick={() => setMobileMenuOpen(false)}
+              className="text-base font-medium text-slate-300 hover:text-white hover:bg-slate-900 px-4 py-3 rounded-sm transition-all uppercase tracking-wider border-l-2 border-transparent hover:border-yellow-500"
+            >
+              {link.label}
+            </Link>
+          ))}
+          <Link 
+            href="/contact"
+            onClick={() => setMobileMenuOpen(false)}
+            className="bg-gradient-to-r from-yellow-600 via-yellow-500 to-yellow-600 text-white px-4 py-3 rounded-sm text-sm font-bold uppercase tracking-widest text-center mt-4"
+          >
+            {t.nav.quote}
+          </Link>
+        </nav>
       </div>
 
     </header>
